@@ -3,8 +3,8 @@ class InvoicesController < ApplicationController
 	before_action :set_invoice, only: [:show, :edit, :update, :destroy]
 
   def index
-    #@search = InvoiceSearch.new(params[:search])
-    @invoices = Invoice.order("created_at ASC")
+    @search = InvoiceSearch.new(params[:search])
+    @invoices = @search.scope
   end
 
   def show
