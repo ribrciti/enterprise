@@ -4,8 +4,11 @@ before_action :set_company, only: [:show, :edit, :update, :destroy]
 
   def index
   	@companies = Company.all
-    #@search = companySearch.new(params[:search])
-    #@companies = @search.all
+    
+    respond_to do |format|
+      format.html
+      format.csv {render text: @companies.to_csv}      
+    end
   end
 
   def show    
