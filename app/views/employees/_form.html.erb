@@ -1,0 +1,40 @@
+<div class="row">
+  <%= form_for @employee, html: { class: 'form-horizontal' } do |f| %>
+    <% if @employee.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+  
+        <ul>
+        <% @employee.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="control-group">
+      <%= f.label :name, class: 'control-label' %><br>
+      <div class="controls">
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :phone, class: 'control-label' %><br>
+      <div class="controls">
+        <%= f.text_field :phone %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :job_type, class: 'control-label' %><br>
+      <div class="controls">
+        <%= f.text_field :job_type %>
+      </div>
+    </div>
+     
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit 'Submit', class: 'btn btn-default' %>
+      </div>
+    </div>
+  <% end %>
+</div>

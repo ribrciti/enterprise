@@ -30,14 +30,14 @@
         <%= f.text_field :tax %>
       </div>
     </div>
-    <div class="control-group">
-      <%= f.label :salesperson, class: 'control-label' %>
+     <div class="control-group">
+      <%= f.label :employee_id, class: 'control-label' %>
       <div class="controls">
-        <%= f.text_field :salesperson %>
-      </div>
-    </div>
-      <div class="control-group">
-        <%= f.label "Status", class: 'control-label' %>
+        <%= collection_select( :invoice, :employee_id,
+        Employee.all, :id, :name, {}, {:multiple => false}) %>
+    </div>       
+    <div class="control-group">
+      <%= f.label "Status", class: 'control-label' %>
       <div class="controls">
         <%= f.select(:status_type, options_for_select(
         [['PAID', 'PAID'], ['PENDING', 'PENDING']])) %>
