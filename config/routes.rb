@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :purchases
   resources :employees
   resources :companies do
     collection {post :import}
