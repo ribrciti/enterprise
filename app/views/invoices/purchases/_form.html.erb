@@ -1,0 +1,29 @@
+<div class="row">
+  <%= form_for [@invoice, @purchase], html: { class: 'form-horizontal' } do |f| %>
+   
+  
+    <div class="control-group">
+      <%= f.label :name, class: 'control-label' %><br>
+      <div class="controls">
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :category, class: 'control-label' %><br>
+      <div class="controls">
+        <%= f.text_field :category %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :quantity, class: 'control-label' %><br>
+      <div class="controls">
+        <%= f.text_field :quantity %>
+      </div>
+    </div>     
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit 'Submit', class: 'btn btn-default' %>
+      </div>
+    </div>
+  <% end %>
+</div>

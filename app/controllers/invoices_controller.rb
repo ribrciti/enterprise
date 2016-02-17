@@ -7,9 +7,8 @@ class InvoicesController < ApplicationController
     @invoices = @search.scope
   end
 
-  def show
-    
-    #@purchases = @invoice.purchases
+  def show    
+    @purchases = @invoice.purchases
   end
 
   def new
